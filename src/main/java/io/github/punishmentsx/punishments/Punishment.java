@@ -27,15 +27,15 @@ public @Data class Punishment {
         public String pastMessage() {
             switch(this) {
                 case BAN:
-                    return "banned";
+                    return "banni";
                 case BLACKLIST:
-                    return "blacklisted";
+                    return "blacklisté";
                 case KICK:
-                    return "kicked";
+                    return "expulsé";
                 case MUTE:
-                    return "muted";
+                    return "réduit au silence";
                 case WARN:
-                    return "warned";
+                    return "averti";
                 default:
                     return "null";
             }
@@ -258,7 +258,7 @@ public @Data class Punishment {
             WebHook.sendWebhook(plugin, victim, uuid, originalDuration(), stack, "un" + type.pastMessage(), victimName, issueReason, issuerName, pardonReason, null);
         }
 
-        String typeString = type.equals(Type.KICK) || type.equals(Type.WARN) ? type.pastMessage() : (isActive() ? (expires == null ? "permanently " : "temporarily ") : "un") + type.pastMessage();
+        String typeString = type.equals(Type.KICK) || type.equals(Type.WARN) ? type.pastMessage() : (isActive() ? (expires == null ? "de manière permanente " : "temporairement ") : "UN") + type.pastMessage();
 
         String message = Locale.BROADCAST.format(plugin)
                 .replace("%duration%", originalDuration())

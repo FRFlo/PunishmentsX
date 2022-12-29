@@ -32,7 +32,7 @@ public abstract class BaseCommand extends Command {
         if (sender instanceof Player) {
             return (Player) sender;
         } else {
-            sender.sendMessage("Only players!");
+            sender.sendMessage("Réservé aux joueurs !");
             return null;
         }
     }
@@ -41,7 +41,7 @@ public abstract class BaseCommand extends Command {
         Profile targetProfile = PlayerUtil.findPlayer(plugin, player);
 
         if (targetProfile == null) {
-            sender.sendMessage("Player has never logged on the server!");
+            sender.sendMessage("Le joueur ne s'est jamais connecté au serveur !");
             return null;
         }
 

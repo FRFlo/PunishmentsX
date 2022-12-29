@@ -33,13 +33,13 @@ public class PunishMenu {
         gui.setUpdate(new GUIUpdate() {
             @Override
             public void onUpdate(GUI gui) {
-                String name = silent ? "&a&lSilent Punishment (ON)" : "&C&lSilent Punishment (OFF)";
+                String name = silent ? "&a&lSanction silencieuse (ON)" : "&C&lSanction silencieuse (OFF)";
 
                 Button button3 = new Button(Material.FEATHER, name);
-                button3.setLore("&fClick to toggle silent punishments");
+                button3.setLore(silent ? "&fCliquez pour rendre la sanction publique" : "&fCliquez pour rendre la sanction silencieuse");
                 button3.setButtonAction((player, gui1, b, event) -> {
                     silent = !silent;
-                    b.setName(silent ? "&a&lSilent Punishment (ON)" : "&C&lSilent Punishment (OFF)");
+                    b.setName(silent ? "&a&lSanction silencieuse (ON)" : "&C&lSanction silencieuse (OFF)");
                     gui.update();
                 });
                 gui.setButton(3, button3);
@@ -53,13 +53,13 @@ public class PunishMenu {
         gui.setButton(7, new Button(Material.STAINED_GLASS_PANE, ""));
         gui.setButton(8, new Button(Material.STAINED_GLASS_PANE, ""));
 
-        String name = silent ? "&a&lSilent Punishment (ON)" : "&C&lSilent Punishment (OFF)";
+        String name = silent ? "&a&lSanction silencieuse (ON)" : "&C&lSanction silencieuse (OFF)";
 
         Button button3 = new Button(Material.FEATHER, name);
-        button3.setLore("&fClick to toggle silent punishments");
+        button3.setLore(silent ? "&fCliquez pour rendre la sanction publique" : "&fCliquez pour rendre la sanction silencieuse");
         button3.setButtonAction((player, gui1, b, event) -> {
             silent = !silent;
-            b.setName(silent ? "&a&lSilent Punishment (ON)" : "&C&lSilent Punishment (OFF)");
+            b.setName(silent ? "&a&lSanction silencieuse (ON)" : "&C&lSanction silencieuse (OFF)");
             gui.update();
         });
         gui.setButton(3, button3);
@@ -68,8 +68,8 @@ public class PunishMenu {
         button4.setLore("&f" + notes);
         gui.setButton(4, button4);
 
-        Button button5 = new Button(Material.BOOK_AND_QUILL, "&6&lHistory");
-        button5.setLore("&fCheck the players punishment history.");
+        Button button5 = new Button(Material.BOOK_AND_QUILL, "&6&lHistorique");
+        button5.setLore("&fVérifiez l'historique des sanctions du joueur.");
         button5.setButtonAction((player, gui1, b, event) -> {
             player.closeInventory();
             HistoryMenu.openHistoryMenu(plugin, staff, targetProfile, notes);
@@ -132,7 +132,7 @@ public class PunishMenu {
                         .replace("%target%", targetProfile.getName())
                         .replace("%reason%", reason));
             } else {
-                issuer.sendMessage(ChatColor.RED + "The target you specified already has an active punishment of that type. You must unmute/unban that player first!");;
+                issuer.sendMessage(ChatColor.RED + "Le joueur que vous avez indiquée a déjà une punition active de ce type. Vous devez d'abord démuter/débannir ce joueur !");;
             }
 
             issuer.closeInventory();

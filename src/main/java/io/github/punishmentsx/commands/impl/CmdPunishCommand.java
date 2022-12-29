@@ -69,7 +69,7 @@ public class CmdPunishCommand extends BaseCommand {
 
             ConfigurationSection section = plugin.getMessagesFile().getConfigurationSection(args[1]);
             if (section == null) {
-                sender.sendMessage("Invalid stack! (Case sensitive, try all caps!)");
+                sender.sendMessage("Stack invalide ! (sensible à la casse, essayez tout en majuscules !)");
                 return;
             }
 
@@ -107,7 +107,7 @@ public class CmdPunishCommand extends BaseCommand {
                         .replace("%target%", targetProfile.getName())
                         .replace("%reason%", reason));
             } else {
-                sender.sendMessage(ChatColor.RED + "The target you specified already has an active punishment of that type. You must unmute/unban that player first!");;
+                sender.sendMessage(ChatColor.RED + "Le joueur cible que vous avez indiquée a déjà une punition active de ce type. Vous devez d'abord démuter/libérer ce joueur !");;
             }
         });
     }

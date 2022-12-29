@@ -47,7 +47,7 @@ public class TempPunishCommands extends BaseCommand {
                     punishmentType = Punishment.Type.MUTE;
                     break;
                 default:
-                    sender.sendMessage(ChatColor.RED + "Available commands: /tempban, /tempmute.");
+                    sender.sendMessage(ChatColor.RED + "Commandes disponibles: /tempban, /tempmute.");
                     return;
             }
 
@@ -133,10 +133,10 @@ public class TempPunishCommands extends BaseCommand {
                             .replace("%target%", targetProfile.getName())
                             .replace("%reason%", sb.toString()));
                 } else {
-                    sender.sendMessage(ChatColor.RED + "You did not specify a valid timeframe.");
+                    sender.sendMessage(ChatColor.RED + "Vous n'avez pas spécifié un délai valide.");
                 }
             } else {
-                sender.sendMessage(ChatColor.RED + "The target you specified already has an active punishment of that type.");
+                sender.sendMessage(ChatColor.RED + "La cible que vous avez spécifiée a déjà une punition active de ce type.");
             }
 
         } else {

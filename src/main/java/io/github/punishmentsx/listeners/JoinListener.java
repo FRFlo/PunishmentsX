@@ -29,7 +29,7 @@ public class JoinListener implements Listener {
         Profile profile;
 
         if (plugin.getProfileManager().getProfiles().containsKey(uuid)) {
-            event.disallow(AsyncPlayerPreLoginEvent.Result.KICK_OTHER, "Your profile is already loaded, please relog!");
+            event.disallow(AsyncPlayerPreLoginEvent.Result.KICK_OTHER, "Votre profil est déjà chargé, veuillez vous reconnecter !");
 
             profile = plugin.getProfileManager().get(uuid);
 
@@ -84,7 +84,7 @@ public class JoinListener implements Listener {
         Profile profile = plugin.getProfileManager().get(player.getUniqueId());
 
         if(profile == null) {
-            player.kickPlayer(ChatColor.RED + "Your profile did not load properly, please relog.");
+            player.kickPlayer(ChatColor.RED + "Votre profil ne s'est pas chargé correctement, veuillez vous reconnecter.");
             return;
         }
 

@@ -49,7 +49,7 @@ public class UnpunishCommands extends BaseCommand {
                     punishmentType = Punishment.Type.MUTE;
                     break;
                 default:
-                    sender.sendMessage(ChatColor.RED + "Available commands: /unban, /unblacklist, /unmute.");
+                    sender.sendMessage(ChatColor.RED + "Commandes disponibles: /unban, /unblacklist, /unmute.");
                     return;
             }
 
@@ -89,7 +89,7 @@ public class UnpunishCommands extends BaseCommand {
                         .replace("%target%", targetProfile.getName())
                         .replace("%reason%", sb.toString()));
             } else {
-                sender.sendMessage(ChatColor.RED + "The target you specified does not have an active punishment of that type.");
+                sender.sendMessage(ChatColor.RED + "Le joueur cible que vous avez spécifiée n'a pas de punition active de ce type.");
             }
 
         } else {

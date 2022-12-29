@@ -26,7 +26,7 @@ public class WhyBannedCommand extends BaseCommand {
         }
 
         if (args.length != 1) {
-            sender.sendMessage(ChatColor.RED + "Usage: /whybanned <player>");
+            sender.sendMessage(ChatColor.RED + String.format("Usage: /%s <joueur>", this.getLabel()));
             return;
         }
 
@@ -40,7 +40,7 @@ public class WhyBannedCommand extends BaseCommand {
             String message = evasionCheck.getWhy();
 
             if (message == null) {
-                sender.sendMessage("Target should be able to join!");
+                sender.sendMessage("Le joueur cible devrait pouvoir se joindre à nous !");
             } else {
                 sender.sendMessage(message);
             }

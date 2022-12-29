@@ -46,7 +46,7 @@ public class ExemptCommand extends BaseCommand {
             UUID punishment = evasionCheck.getPunishment();
 
             if (message == null) {
-                sender.sendMessage("Target should be able to join!");
+                sender.sendMessage("Le joueur cible devrait pouvoir se joindre à nous !");
                 return;
             }
 

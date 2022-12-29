@@ -29,8 +29,8 @@ public class HistoryMenu {
         gui.setButton(2, new Button(Material.STAINED_GLASS_PANE, ""));
         gui.setButton(3, new Button(Material.STAINED_GLASS_PANE, ""));
         if (notes != null) {
-            Button backButton = new Button(Material.REDSTONE, "&c&lBack");
-            backButton.setLore("&fClick to return to punish menu");
+            Button backButton = new Button(Material.REDSTONE, "&c&lRetour");
+            backButton.setLore("&fCliquez pour revenir au menu de sanction");
             backButton.setButtonAction((player, gui1, b, event) -> {
                 player.closeInventory();
                 PunishMenu.openPunishMenu(plugin, staff, targetProfile, notes);

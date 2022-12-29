@@ -29,7 +29,7 @@ public class UnexemptCommand extends BaseCommand {
         }
 
         if (args.length != 1) {
-            sender.sendMessage(ChatColor.RED + "Usage: /unexempt <player>");
+            sender.sendMessage(ChatColor.RED + String.format("Usage: /%s <joueur>", this.getLabel()));
             return;
         }
 
@@ -46,7 +46,7 @@ public class UnexemptCommand extends BaseCommand {
             boolean exempt = evasionCheck.isExempt();
 
             if (!exempt) {
-                sender.sendMessage("Target is not exempt!");
+                sender.sendMessage("Le joueur cible n'est pas exempte !");
                 return;
             }
 
@@ -63,7 +63,7 @@ public class UnexemptCommand extends BaseCommand {
 
                         mu.setUpdate(map);
                         plugin.getMongo().massUpdate(false, mu);
-                        sender.sendMessage("Removed exemption.");
+                        sender.sendMessage("Exemption supprimée.");
                     }
                 }
             });

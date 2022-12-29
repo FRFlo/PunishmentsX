@@ -55,7 +55,7 @@ public class PromptListener implements Listener {
 
         Profile targetProfile = PlayerUtil.findPlayer(plugin, punishment.getVictim());
         if (targetProfile == null) {
-            plugin.getLogger().log(Level.SEVERE, "Profile not found! Report this issue to developer!");
+            plugin.getLogger().log(Level.SEVERE, "Profil non trouvé ! Signaler ce problème au développeur !");
             return;
         }
 

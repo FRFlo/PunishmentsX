@@ -49,7 +49,7 @@ public class PunishCommands extends BaseCommand {
                     punishmentType = Punishment.Type.WARN;
                     break;
                 default:
-                    sender.sendMessage(ChatColor.RED + "Available commands: /ban, /blacklist, /kick, /mute, /warn.");
+                    sender.sendMessage(ChatColor.RED + "Commandes disponibles: /ban, /blacklist, /kick, /mute, /warn.");
                     return;
             }
 
@@ -88,7 +88,7 @@ public class PunishCommands extends BaseCommand {
                         .replace("%target%", targetProfile.getName())
                         .replace("%reason%", sb.toString()));
             } else {
-                sender.sendMessage(ChatColor.RED + "The target you specified already has an active punishment of that type.");
+                sender.sendMessage(ChatColor.RED + "Le joueur cible que vous avez spécifiée a déjà une punition active de ce type.");
             }
 
         } else {

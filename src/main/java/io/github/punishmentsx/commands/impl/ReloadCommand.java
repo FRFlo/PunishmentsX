@@ -25,7 +25,7 @@ public class ReloadCommand extends BaseCommand {
 
         ThreadUtil.runTask(true, plugin, () -> {
             plugin.reloadMessages();
-            sender.sendMessage(Colors.convertLegacyColors("&aReloading messages.yml file!"));
+            sender.sendMessage(Colors.convertLegacyColors("&aRechargement du fichier messages.yml !"));
         });
     }
 }
