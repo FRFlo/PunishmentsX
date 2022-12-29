@@ -133,23 +133,30 @@ public @Data class Punishment {
     private Type type;
     private boolean silentIssue, silentPardon;
 
+    public String dateformat(Date date) {
+        if (date == null) {
+            return "Jamais";
+        } else {
+            SimpleDateFormat outputFormat;
+
+            switch (ConfigValues.DATE_FORMAT.format(plugin)) {
+                case "AMERICAN":
+                    outputFormat = new SimpleDateFormat("MM/dd/yyyy h:mm:ss a");
+                    return outputFormat.format(date);
+                case "EUROPEAN":
+                    outputFormat = new SimpleDateFormat("dd/MM/yyyy H:mm:ss");
+                    return outputFormat.format(date);
+                default:
+                    return date.toString();
+            }
+        }
+    }
+
     public String expiry() {
         if (expires == null) {
-            return "Never";
+            return "Jamais";
         } else {
-            return expires.toString();
-//            DateFormat outputFormat;
-//
-//            switch (plugin.getConfig().getString("GENERAL.DATE_FORMAT")) {
-//                case "AMERICAN":
-//                    outputFormat = new SimpleDateFormat("MM/dd/yyyy h:mm:ss a");
-//                    return outputFormat.format(expires);
-//                case "EUROPEAN":
-//                    outputFormat = new SimpleDateFormat("dd/MM/yyyy h:mm:ss a");
-//                    return outputFormat.format(expires);
-//                default:
-//                    return expires.toString();
-//            }
+            return dateformat(expires);
         }
     }
     
