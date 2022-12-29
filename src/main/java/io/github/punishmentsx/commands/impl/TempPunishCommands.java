@@ -140,7 +140,7 @@ public class TempPunishCommands extends BaseCommand {
             }
 
         } else {
-            sender.sendMessage(ChatColor.RED + "Usage: /" + label + " <target> <timeframe> <reason> [-s]");
+            sender.sendMessage(ChatColor.RED + String.format("Usage: /%s <joueur> <durée> <raison> [-s]", this.getLabel()));
         }
     }
 }

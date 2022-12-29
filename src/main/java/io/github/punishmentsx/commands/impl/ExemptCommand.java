@@ -29,7 +29,7 @@ public class ExemptCommand extends BaseCommand {
         }
 
         if (args.length != 1) {
-            sender.sendMessage(ChatColor.RED + "Usage: /exempt <player>");
+            sender.sendMessage(ChatColor.RED + String.format("Usage: /%s <joueur>", this.getLabel()));
             return;
         }
 

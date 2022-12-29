@@ -93,7 +93,7 @@ public class UnpunishCommands extends BaseCommand {
             }
 
         } else {
-            sender.sendMessage(ChatColor.RED + "Usage: /" + label + " <target> <reason> [-s]");
+            sender.sendMessage(ChatColor.RED + String.format("Usage: /%s <target> <reason> [-s]", this.getLabel()));
         }
     }
 }

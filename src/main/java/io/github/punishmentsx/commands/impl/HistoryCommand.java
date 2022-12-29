@@ -32,7 +32,7 @@ public class HistoryCommand extends BaseCommand {
         }
 
         if (args.length != 1) {
-            sender.sendMessage(ChatColor.RED + "Usage: /history <player>");
+            sender.sendMessage(ChatColor.RED + String.format("Usage: /%s <joueur>", this.getLabel()));
             return;
         }
 

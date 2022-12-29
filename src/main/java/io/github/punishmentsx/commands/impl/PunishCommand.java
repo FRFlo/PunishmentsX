@@ -33,7 +33,7 @@ public class PunishCommand extends BaseCommand {
         }
 
         if (args.length < 1) {
-            sender.sendMessage(ChatColor.RED + "Usage: /punish <player> [notes]");
+            sender.sendMessage(ChatColor.RED + String.format("Usage: /%s <joueur> [notes]", this.getLabel()));
             return;
         }
 

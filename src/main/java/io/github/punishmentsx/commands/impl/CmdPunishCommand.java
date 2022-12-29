@@ -35,7 +35,7 @@ public class CmdPunishCommand extends BaseCommand {
         }
 
         if (args.length < 2) {
-            sender.sendMessage(ChatColor.RED + "Usage: /cmdpunish <player> <stack> [notes] [-s]");
+            sender.sendMessage(ChatColor.RED + String.format("Usage: /%s <joueur> <stack> [notes] [-s]", this.getLabel()));
             return;
         }
 
