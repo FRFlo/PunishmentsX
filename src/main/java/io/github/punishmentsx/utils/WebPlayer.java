@@ -36,7 +36,7 @@ public @Data class WebPlayer {
             }
 
             String jsonString = stringBuilder.toString();
-            JsonObject json = new JsonParser().parse(jsonString).getAsJsonObject();
+            JsonObject json = JsonParser.parseString(jsonString).getAsJsonObject();
             if (json != null) {
                 this.uuid = UUID.fromString(json.get("id").getAsString().replaceFirst(
                         "(\\p{XDigit}{8})(\\p{XDigit}{4})(\\p{XDigit}{4})(\\p{XDigit}{4})(\\p{XDigit}+)",
