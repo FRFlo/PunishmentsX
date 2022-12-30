@@ -25,7 +25,7 @@ public class PunishCommands extends BaseCommand {
     public void execute(CommandSender sender, String[] args, String alias) {
 
         String label = alias.toLowerCase();
-        if(args.length > 1) {
+        if (args.length > 1) {
             Profile targetProfile = getProfile(sender, plugin, args[0]);
             if (targetProfile == null) {
                 return;
@@ -59,19 +59,20 @@ public class PunishCommands extends BaseCommand {
             }
 
             UUID issuer = null;
-            if(sender instanceof Player) {
+            if (sender instanceof Player) {
                 Player player = (Player) sender;
                 issuer = player.getUniqueId();
 
             }
 
             Punishment punishment = targetProfile.getActivePunishment(punishmentType);
-            if(punishment == null || punishmentType.equals(Punishment.Type.KICK) || punishmentType.equals(Punishment.Type.WARN)) {
+            if (punishment == null || punishmentType.equals(Punishment.Type.KICK)
+                    || punishmentType.equals(Punishment.Type.WARN)) {
                 StringBuilder sb = new StringBuilder();
                 boolean silent = false;
-                for(int i = 1; i < args.length; i++) {
+                for (int i = 1; i < args.length; i++) {
                     String s = args[i];
-                    if(s.equalsIgnoreCase("-s")) {
+                    if (s.equalsIgnoreCase("-s")) {
                         silent = true;
                     } else {
                         sb.append(args[i]);
