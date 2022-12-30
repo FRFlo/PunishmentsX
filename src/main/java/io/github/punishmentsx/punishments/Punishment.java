@@ -16,6 +16,7 @@ import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import xyz.leuo.gooey.button.Button;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.List;
 
@@ -217,7 +218,7 @@ public @Data class Punishment {
         if(player != null && player.isOnline()) {
             victimName = player.getName();
             if(isActive()) {
-                type.action(plugin, expiry(), originalDuration(), issueReason, player);
+                type.action(plugin, dateformat(expires), originalDuration(), issueReason, player);
             }
         } else {
             Profile victimProfile = PlayerUtil.findPlayer(plugin, victim);
@@ -236,12 +237,12 @@ public @Data class Punishment {
                         .replace("%silentPrefix%", silentIssue ? Locale.SILENT_PREFIX.format(plugin) : "")
                         .replace("%victimName%", victimName)
                         .replace("%issuerName%", issuerName)
-                        .replace("%expiry%", expiry())
+                        .replace("%expiry%", dateformat(expires))
                         .replace("%reason%", issueReason));
             }
 
             hover = String.join("\n", list);
-            WebHook.sendWebhook(plugin, victim, uuid, originalDuration(), stack, type.pastMessage(), victimName, issueReason, issuerName, null, expiry());
+            WebHook.sendWebhook(plugin, victim, uuid, originalDuration(), stack, type.pastMessage(), victimName, issueReason, issuerName, null, dateformat(expires));
         } else {
             List<String> list = new ArrayList<>();
             for (String string : Locale.UNPUNISHMENT_HOVER.formatLines(plugin)) {
@@ -263,7 +264,7 @@ public @Data class Punishment {
         String message = Locale.BROADCAST.format(plugin)
                 .replace("%duration%", originalDuration())
                 .replace("%silentPrefix%", silentIssue ? Locale.SILENT_PREFIX.format(plugin) : "")
-                .replace("%expiry%", expiry())
+                .replace("%expiry%", dateformat(expires))
                 .replace("%reason%", issueReason)
                 .replace("%target%", victimName)
                 .replace("%type%", typeString)
@@ -273,7 +274,7 @@ public @Data class Punishment {
         Notifications.sendMessage(plugin, silent, message, hover);
     }
 
-    @Deprecated
+    /*@Deprecated*/
     public void importFromDocument(Document d) {
         setVictim(d.get("victim", UUID.class));
         setIssuer(d.get("issuer", UUID.class));
