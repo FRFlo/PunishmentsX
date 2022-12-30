@@ -83,22 +83,22 @@ public class TempPunishCommands extends BaseCommand {
 
                 if(time > 0 && type != null) {
                     switch(type) {
-                        case "seconds": case "second": case "sec": case "s":
+                        case "secondes": case "seconde": case "sec": case "s":
                             calendar.add(Calendar.SECOND, time);
                             break;
-                        case "minutes": case "minute": case "m":
+                        case "minutes": case "minute": case "min": case "m":
                             calendar.add(Calendar.MINUTE, time);
                             break;
-                        case "hours": case "hrs": case "hr": case "h":
+                        case "heures": case "heure": case "h":
                             calendar.add(Calendar.HOUR, time);
                             break;
-                        case "days": case "day": case "d":
+                        case "jours": case "jour": case "j":
                             calendar.add(Calendar.HOUR, time * 24);
                             break;
-                        case "weeks": case "week": case "w":
+                        case "semaines": case "semaine": case "sem": case "se":
                             calendar.add(Calendar.HOUR, time * 24 * 7);
                             break;
-                        case "months": case "month": case "mo":
+                        case "mois": case "mo":
                             calendar.add(Calendar.MONTH, time);
                             break;
                     }
