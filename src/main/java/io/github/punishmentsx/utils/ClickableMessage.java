@@ -78,6 +78,62 @@ public class ClickableMessage {
             case MAGIC:
                 this.current.setObfuscated(true);
                 break;
+            case AQUA:
+                this.current.setColor(ChatColor.AQUA.asBungee());
+                break;
+            case BLACK:
+                this.current.setColor(ChatColor.BLACK.asBungee());
+                break;
+            case BLUE:
+                this.current.setColor(ChatColor.BLUE.asBungee());
+                break;
+            case DARK_AQUA:
+                this.current.setColor(ChatColor.DARK_AQUA.asBungee());
+                break;
+            case DARK_BLUE:
+                this.current.setColor(ChatColor.DARK_BLUE.asBungee());
+                break;
+            case DARK_GRAY:
+                this.current.setColor(ChatColor.DARK_GRAY.asBungee());
+                break;
+            case DARK_GREEN:
+                this.current.setColor(ChatColor.DARK_GREEN.asBungee());
+                break;
+            case DARK_PURPLE:
+                this.current.setColor(ChatColor.DARK_PURPLE.asBungee());
+                break;
+            case DARK_RED:
+                this.current.setColor(ChatColor.DARK_RED.asBungee());
+                break;
+            case GOLD:
+                this.current.setColor(ChatColor.GOLD.asBungee());
+                break;
+            case GRAY:
+                this.current.setColor(ChatColor.GRAY.asBungee());
+                break;
+            case GREEN:
+                this.current.setColor(ChatColor.GREEN.asBungee());
+                break;
+            case LIGHT_PURPLE:
+                this.current.setColor(ChatColor.LIGHT_PURPLE.asBungee());
+                break;
+            case RED:
+                this.current.setColor(ChatColor.RED.asBungee());
+                break;
+            case RESET:
+                this.current.setColor(ChatColor.WHITE.asBungee());
+                break;
+            case STRIKETHROUGH:
+                this.current.setStrikethrough(true);
+                break;
+            case WHITE:
+                this.current.setColor(ChatColor.WHITE.asBungee());
+                break;
+            case YELLOW:
+                this.current.setColor(ChatColor.YELLOW.asBungee());
+                break;
+            default:
+                break;
         }
         return this;
     }
